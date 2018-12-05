@@ -35,6 +35,14 @@ accuracy = svm.predict(X_test)
 count = 0
 for i in accuracy:
     if(accuracy[i] == y_test[i]):
-        count += 1
+        count = 1 + count
+        
+fraud_count = 0
+for x in y_test:
+    if(y_test[x] == 1):
+        fraud_count = 1 + fraud_count
+print(fraud_count)
         
 print(count/len(y_test) * 100)
+print(fraud_count)
+    
